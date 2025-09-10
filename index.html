@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>GrizAI - Vodjenje dijete revolucionarizovano</title>
+    <meta name="description" content="GrizAI vam pomaze da smrsate lako! Samo slikajte obrok i dobicete detaljnu analizu kalorija i nutritivnih vrednosti. Revolucionarno vodjenje dijete uz vestacku inteligenciju.">
+    <meta name="keywords" content="dijeta, kalorije, brojanje kalorija, AI dijeta, nutricionista, AI Nutricionista, zdravlje, hrana, GrizAI, vodjenje dijete, smrsam">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="GrizAI - Revolucionarno vodjenje dijete uz AI">
+    <meta property="og:description" content="Fotografisite obrok i odmah dobijte detaljnu analizu kalorija i napretka.">
+    <meta property="og:image" content="assets/hero_left.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://griz-ai.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GrizAI - Revolucionarno vodjenje dijete uz AI">
+    <meta name="twitter:description" content="Slikaj obrok i dobices kalorije i nutritivne podatke. Najlaksi nacin da smrsas.">
+    <meta name="twitter:image" content="assets/hero_left.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/logo.png" type="image/png">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            /* Made gradient lighter by adjusting the darker color to make buttons stand out more */
+            background: linear-gradient(135deg, #F4FFE2 0%, #C8E885 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            /* Updated button color to BCE578 */
+            background: #BCE578;
+            color: #2d3748;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            /* Added stronger drop shadow effect to make buttons stand out */
+            box-shadow: 0 8px 25px rgba(45, 55, 72, 0.15), 0 4px 10px rgba(188, 229, 120, 0.3);
+        }
+
+        .cta-button:hover {
+            /* Updated hover color to slightly darker shade */
+            background: #a8d165;
+            transform: translateY(-2px);
+            /* Enhanced hover shadow for more dramatic effect */
+            box-shadow: 0 12px 35px rgba(45, 55, 72, 0.2), 0 6px 15px rgba(188, 229, 120, 0.4);
+        }
+
+        /* Phone Mockups Section */
+        .phones-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hero CTA Section */
+        .hero-cta {
+            text-align: center;
+            margin: 40px 0 80px;
+        }
+
+        /* Features Section */
+        .features-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .features-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            /* Updated feature card background to BCE578 */
+            background: #BCE578;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            /* Added subtle drop shadow to feature cards for consistency */
+            box-shadow: 0 4px 15px rgba(45, 55, 72, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            /* Enhanced feature card hover shadow */
+            box-shadow: 0 8px 25px rgba(45, 55, 72, 0.15);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #4a5568;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Bottom Phones Section */
+        .bottom-phones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .bottom-phones .phone-mockup {
+            width: 220px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .phones-section {
+                gap: 20px;
+            }
+
+            .phone-mockup {
+                /* Made phones smaller on mobile so they fit side by side */
+                width: 160px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bottom-phones {
+                gap: 15px;
+            }
+
+            .bottom-phones .phone-mockup {
+                /* Made bottom phones smaller on mobile */
+                width: 120px;
+            }
+
+            .cta-button {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 5px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .phone-mockup {
+                /* Further reduced phone size for very small screens */
+                width: 180px;
+            }
+
+            .bottom-phones .phone-mockup {
+                /* Further reduced bottom phone size for very small screens */
+                width: 100px;
+            }
+
+            .cta-button {
+                padding: 14px 35px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <h1 class="hero-title">GrizAI - Vodjenje dijete - Revolucionarizovano</h1>
+            <p class="hero-subtitle">Samo slikaj obrok i dobices detaljnu analizu</p>
+        </header>
+
+        <main>
+            <!-- Phone Mockups -->
+            <section class="phones-section">
+                <img src="assets/hero_left.png" alt="GrizAI aplikacija prikazuje analizu kalorija obroka" class="phone-mockup">
+                <img src="assets/hero_right.png" alt="App Screenshot 2" class="phone-mockup">
+            </section>
+
+            <!-- Hero CTA Section -->
+            <section class="hero-cta">
+                <button class="cta-button" onclick="handleCTAClick()">PROBAJ ODMAH!</button>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2 class="features-title">STA NUDIMO?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Nikad lakse brojanje kalorija</h3>
+                        <p class="feature-description">Brojanje kalorija revolucionarizovano uz pomoc vestacke inteligencije</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Bez Gubljenja Vremena</h3>
+                        <p class="feature-description">Samo slikaj obrok i za par sekundi dobices detaljnu analizu</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Jednostavno Prati Napredak</h3>
+                        <p class="feature-description">Detaljna analiza napretka dostupna na samo jedan klik</p>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="handleCTAClick()">PROBAJ ODMAH!</button>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ne mozete da smrsate?</h2>
+                <p>GrizAI je tu da vam pomogne</p>
+            </section>
+
+            <!-- Bottom Phone Mockups -->
+            <section class="bottom-phones">
+                <img src="assets/1.png" alt="Slika GrizAI aplikacije" class="phone-mockup">
+                <img src="assets/2.png" alt="Pracenje napretka u GrizAI aplikaciji" class="phone-mockup">
+                <img src="assets/3.png" alt="Pracenje napretka u GrizAI aplikaciji" class="phone-mockup">
+            </section>
+
+            <!-- Final CTA -->
+            <section class="final-cta">
+                <button class="cta-button" onclick="handleCTAClick()">PROBAJ ODMAH!</button>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function handleCTAClick() {
+            window.location.href = "download.html";
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.feature-card, .phone-mockup');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
