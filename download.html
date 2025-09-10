@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GrizAI</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff; /* you can change background if needed */
+    }
+    img {
+      max-width: 60%;
+      height: auto;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.grizai.app";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/rs/app/grizai/id6745571241";
+      } else {
+        // Fallback (desktop or unknown device)
+        window.location.href = "https://play.google.com/store/apps/details?id=com.grizai.app";
+      }
+    };
+  </script>
+</head>
+<body>
+  <img src="assets/logo.png" alt="GrizAI Logo">
+</body>
+</html>
