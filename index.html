@@ -93,14 +93,15 @@
             box-shadow: 0 12px 35px rgba(45, 55, 72, 0.2), 0 6px 15px rgba(188, 229, 120, 0.4);
         }
 
-        /* Phone Mockups Section */
         .phones-section {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-            flex-wrap: wrap;
+            gap: 8px;              /* very small gap */
+            margin: 10px 0;       /* reduce vertical space */
+            flex-wrap: nowrap;    /* 🔴 force horizontal stacking */
+            padding: 0 4px;       /* tiny side padding */
         }
+
 
         .phone-mockup {
             width: 280px;
@@ -275,6 +276,46 @@
                 font-size: 2rem;
             }
         }
+
+        @media (max-width: 768px) {
+            .phones-section {
+                flex-wrap: nowrap;
+            }
+        
+            .phone-mockup {
+                width: 140px;
+                max-width: 48vw; /* prevents overflow on tiny phones */
+            }
+        
+            .hero-cta {
+                margin: 20px 0 30px;
+            }
+        
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width: 360px) {
+            .phone-mockup {
+                width: 125px;
+            }
+        
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        
+            .cta-button {
+                font-size: 1.25rem;
+                padding: 12px 24px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
